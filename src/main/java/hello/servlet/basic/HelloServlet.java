@@ -10,6 +10,7 @@ import java.io.IOException;
 
 @WebServlet(name = "helloServlet", urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,6 +23,7 @@ public class HelloServlet extends HttpServlet {
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
-        response.getWriter().println("Hello " + username);
+        response.getWriter().write("hello " + username);
+
     }
 }
